@@ -1,0 +1,60 @@
+{
+    "userPoolName": "cognito1504e3ba_userpool_1504e3ba",
+    "autoVerifiedAttributes": [
+        "email"
+    ],
+    "mfaConfiguration": "OFF",
+    "mfaTypes": [
+        "SMS Text Message"
+    ],
+    "roleName": "cognito1504e3ba_sns-role",
+    "roleExternalId": "cognito1504e3ba_role_external_id",
+    "policyName": "cognito1504e3ba-sns-policy",
+    "smsAuthenticationMessage": "Your authentication code is {####}",
+    "smsVerificationMessage": "Your verification code is {####}",
+    "emailVerificationSubject": "Verification code",
+    "emailVerificationMessage": "'{####}' code",
+    "defaultPasswordPolicy": false,
+    "passwordPolicyMinLength": 8,
+    "passwordPolicyCharacters": [
+        "Requires Lowercase",
+        "Requires Uppercase",
+        "Requires Numbers",
+        "Requires Symbols"
+    ],
+    "requiredAttributes": [
+        "email"
+    ],
+    "userpoolClientName": "cognito1504e3ba_app_client",
+    "userpoolClientGenerateSecret": true,
+    "userpoolClientRefreshTokenValidity": 30,
+    "userpoolClientReadAttributes": [
+        "email"
+    ],
+    "mfaLambdaRole": "cognito1504e3ba_totp_lambda_role",
+    "mfaLambdaLogPolicy": "cognito1504e3ba_totp_lambda_log_policy",
+    "mfaPassRolePolicy": "cognito1504e3ba_totp_pass_role_policy",
+    "mfaLambdaIAMPolicy": "cognito1504e3ba_totp_lambda_iam_policy",
+    "userpoolClientLambdaRole": "cognito1504e3ba_userpoolclient_lambda_role",
+    "userpoolClientLogPolicy": "cognito1504e3ba_userpoolclient_lambda_log_policy",
+    "userpoolClientLambdaPolicy": "cognito1504e3ba_userpoolclient_lambda_iam_policy",
+    "userpoolClientSetAttributes": true,
+    "identityPoolName": "cognito1504e3ba_identitypool_1504e3ba",
+    "allowUnauthenticatedIdentities": false,
+    "thirdPartyAuth": false,
+    "lambdaLogPolicy": "cognito1504e3ba_lambda_log_policy",
+    "openIdLambdaRoleName": "cognito1504e3ba_openid_lambda_role",
+    "openIdRolePolicy": "cognito1504e3ba_openid_pass_role_policy",
+    "openIdLambdaIAMPolicy": "cognito1504e3ba_openid_lambda_iam_policy",
+    "openIdLogPolicy": "cognito1504e3ba_openid_lambda_log_policy",
+    "useDefault": "manual",
+    "unAuthRoleName": "icki-20190524110755-unauthRole",
+    "authRoleName": "icki-20190524110755-authRole",
+    "unAuthRoleArn": "arn:aws:iam::501792013993:role/icki-20190524110755-unauthRole",
+    "authRoleArn": "arn:aws:iam::501792013993:role/icki-20190524110755-authRole",
+    "resourceName": "cognito1504e3ba",
+    "authSelections": "userPoolOnly",
+    "userpoolClientWriteAttributes": [
+        "email"
+    ]
+}
