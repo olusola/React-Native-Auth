@@ -73,11 +73,13 @@ class SignupAuth extends Component {
               <TextInput
                 placeholder='Password'
                 icon='lock'
+                secureTextEntry={true}
                 handleChangeText={val => this.handleChangeText('password', val)}
               />
               <TextInput
                 placeholder='Confirm Password'
                 icon='lock'
+                secureTextEntry={true}
                 handleChangeText={val => this.handleChangeText('c_password', val)}
               />
               <Button

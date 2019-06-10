@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 import { Input } from 'react-native-elements';
 
 const TextInput = ({
   placeholder = '',
   icon,
-  handleChangeText
+  handleChangeText,
+  secureTextEntry
 }) => {
   return (
     <Input
@@ -17,14 +18,16 @@ const TextInput = ({
       leftIconContainerStyle={styles.leftIconContainerStyle}
       inputStyle={styles.inputStyle}
       onChangeText={handleChangeText}
+      secureTextEntry={secureTextEntry}
     />
   )
 }
 
 TextInput.propTypes = {
   placeholder: PropTypes.string,
-  leftIcon: PropTypes.string,
-  handleChangeText: PropTypes.func
+  icon: PropTypes.string,
+  handleChangeText: PropTypes.func,
+  secureTextEntry: PropTypes.bool
 }
 
 const styles = StyleSheet.create({

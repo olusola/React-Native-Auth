@@ -45,6 +45,7 @@ class LoginAuth extends Component {
         <TextInput
           placeholder='Password'
           icon='lock'
+          secureTextEntry={true}
           handleChangeText={val => this.handleChangeText('password', val)}
         />
         <Button
