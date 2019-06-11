@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
 import {StyleSheet, View} from 'react-native';
 import { Button } from 'react-native-elements';
-import TextInput from '../../common/TextInput/TextInput'
-import { withNavigation } from 'react-navigation'
+import TextInput from '../../common/TextInput/TextInput';
+import { withNavigation } from 'react-navigation';
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux';
 import { Auth } from 'aws-amplify';
-
+import { addCurrentUser } from '../../redux/actions/authActions'
 class LoginAuth extends Component {
   constructor(props) {
     super(props)
@@ -17,6 +19,10 @@ class LoginAuth extends Component {
     showConfirmationForm: false
   }
 
+  componentDidMount() {
+    console.log(this.props)
+  }
+
   handleChangeText = (key, value) => {
     this.setState({[key]: value })
   }
@@ -27,6 +33,7 @@ class LoginAuth extends Component {
        const user = await Auth.signIn(username, password)
        console.log('user successfully signed in!', user)
        this.setState({ user, showConfirmationForm: true })
+       this.props.addCurrentUser(user)
        await this.props.navigation.navigate('Profile')
     } catch (err) {
       console.log('error:', err)
@@ -64,4 +71,15 @@ const styles = StyleSheet.create({
   }
 })
 
-export default withNavigation(LoginAuth)
+const mapsStateToProps = (state) => {
+  return {
+    allData: state
+  }
+}
+
+const mapsDispatchToProps = (dispatch) => (
+  bindActionCreators({
+    addCurrentUser
+  }, dispatch)
+)
+export default connect(mapsStateToProps, mapsDispatchToProps)(withNavigation(LoginAuth))

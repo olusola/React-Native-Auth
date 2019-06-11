@@ -1,6 +1,8 @@
-import React, {Component} from 'react';
-import {StyleSheet, SafeAreaView, View, Text} from 'react-native';
+import React, { Component } from 'react';
+import { SafeAreaView, Text} from 'react-native';
 import { Button } from 'react-native-elements';
+import { connect } from "react-redux";
+import { bindActionCreators } from 'redux';
 
 import { Auth } from 'aws-amplify';
 class Dummy extends Component {
@@ -9,7 +11,7 @@ class Dummy extends Component {
   }
 
   componentDidMount() {
-
+    console.log(this.props)
   }
 
   handleSignOut = () => {
@@ -31,4 +33,15 @@ class Dummy extends Component {
   }
 }
 
-export default Dummy
+const mapsStateToProps = (state) => {
+  return {
+    ...state
+  }
+}
+
+const mapsDispatchToProps = (dispatch) => (
+  bindActionCreators({
+    dispatch})
+)
+
+export default connect(mapsStateToProps, mapsDispatchToProps)(Dummy)

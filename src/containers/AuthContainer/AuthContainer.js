@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {StyleSheet, View} from 'react-native';
+import React, { Component } from 'react';
+import { StyleSheet, View } from 'react-native';
 import { Button } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -20,7 +20,7 @@ class AuthContainer extends Component {
     try {
       const user = await Auth.currentAuthenticatedUser()
       if (user) {
-        console.log('current user', user)
+        console.log('current user', this.props)
         this.props.navigation.navigate('Discover')
       } else {
         console.log('no current user', user)
