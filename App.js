@@ -16,9 +16,9 @@ class App extends Component {
       <KeyboardAvoidingView
         behavior={Platform.OS === "ios" ? "padding" : null}
         enabled
-        style={{ flex: 1 }}
+        style={{flex: 1 }}
         >
-          <Provider store={ store }>
+          <Provider store={store}>
             <AppNavigator/>
           </Provider>
       </KeyboardAvoidingView>

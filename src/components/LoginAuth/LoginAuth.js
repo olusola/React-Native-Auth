@@ -83,3 +83,4 @@ const mapsDispatchToProps = (dispatch) => (
   }, dispatch)
 )
 export default connect(mapsStateToProps, mapsDispatchToProps)(withNavigation(LoginAuth))
+export { LoginAuth }
